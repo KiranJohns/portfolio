@@ -43,7 +43,7 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="assets/img/Untitled-1 copy.jpg" alt="" class="img-fluid rounded-circle">
+        <img src="assets/img/photo_2022-07-19_21-25-35.jpg" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">KIRAN JOHNSON</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="https://twitter.com/KJohns172" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -590,17 +590,17 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
+                  <input type="text" name="name" class="form-control" id="name" onkeyup="validateName()" >
                   <span id="name-error"></span>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                  <input type="email" class="form-control" name="email" id="email" onkeyup="validateEmail()">
                   <span id="email-error"></span>
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" id="message" required></textarea>
+                <textarea class="form-control" name="message" rows="10" id="message" onkeyup="validateMsg()"></textarea>
                 <span id="msg-error"></span>
               </div>
               <div class="my-3">
@@ -655,7 +655,7 @@ var emailErr = document.getElementById('email-error');
 var msgErr = document.getElementById('msg-error');
 
 function validateName(){
-    var name = document.getElementById('txtname').value;
+    var name = document.getElementById('name').value;
 
     if(name.length == 0) {
         nameErr.innerHTML = 'Name is required';
@@ -671,7 +671,7 @@ function validateName(){
 }
 
 function validateEmail(){
-    var email = document.getElementById('txtemail').value;
+    var email = document.getElementById('email').value;
 
     if(email.length == 0) {
         emailErr.innerHTML = 'Email is required';
@@ -687,7 +687,7 @@ function validateEmail(){
 }
 
 function validateMsg(){
-    var msg = document.getElementById('textAreaExample1').value;
+    var msg = document.getElementById('message').value;
 
      if(msg.length < 5) {
         msgErr.innerHTML = 'Please add more content in the message';
